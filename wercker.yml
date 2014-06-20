@@ -9,7 +9,7 @@ build:
     - script:
         name: build image
         code: |
-          docker build -t rodrigosaito/ruby .
+          docker build -t rodrigosaito/ruby:2.1.2 .
 
     - script:
         name: login to docker hub
