@@ -1,0 +1,13 @@
+box: wercker-labs/docker
+build:
+  steps:
+    - script:
+        name: docker version
+        code: |
+          docker -v
+
+    - script:
+        name: build image
+        code: |
+          docker build -t rodrigosaito/ruby .
+
