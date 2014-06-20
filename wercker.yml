@@ -7,14 +7,14 @@ build:
           docker -v
 
     - script:
+        name: login to docker hub
+        code: |
+          docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASSWORD
+
+    - script:
         name: build image
         code: |
           docker build -t rodrigosaito/ruby:2.1.2 .
-
-    - script:
-        name: login to docker hub
-        code: |
-          docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
 
     - script:
         name: push image
