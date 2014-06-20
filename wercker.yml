@@ -11,3 +11,13 @@ build:
         code: |
           docker build -t rodrigosaito/ruby .
 
+    - script:
+        name: login to docker hub
+        code: |
+          docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+
+    - script:
+        name: push image
+        code: |
+          docker push rodrigosaito/ruby
+
