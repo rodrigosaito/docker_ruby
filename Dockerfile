@@ -14,7 +14,7 @@ RUN apt-get install -y wget curl git git-core build-essential \
 # Build ruby from source
 RUN wget -O ruby-2.1.2.tar.gz http://cache.ruby-lang.org/pub/ruby/2.1/ruby-2.1.2.tar.gz
 RUN tar -xzf ruby-2.1.2.tar.gz
-RUN cd ruby-2.1.2/ && ./configure && make && make install
+RUN cd ruby-2.1.2/ && ./configure && make && make install && rm -rf ruby-2.1.2*
 
 # Add options to gemrc
 RUN echo "gem: --no-ri --no-rdoc" > ~/.gemrc
@@ -24,5 +24,4 @@ RUN gem install bundler
 
 # Some cleanup
 RUN apt-get clean
-RUN rm -rf ruby-2.1.2*
 
