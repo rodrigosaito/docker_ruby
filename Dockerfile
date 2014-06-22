@@ -22,5 +22,7 @@ RUN echo "gem: --no-ri --no-rdoc" > ~/.gemrc
 # Install bundler
 RUN gem install bundler
 
+# Some cleanup
 RUN apt-get clean
+RUN rm -rf ruby-2.1.2*
 
